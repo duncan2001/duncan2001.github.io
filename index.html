@@ -11,7 +11,7 @@
 <svg width="960" height="500"></svg>
 
 <script>
-d3.json("http://cors.io/?https://min-api.cryptocompare.com/data/histoday?fsym=ETH&tsym=USD&limit=2&aggregate=3&e=CCCAGG", function(error, d) {
+d3.json("https://cors.io/?https://min-api.cryptocompare.com/data/histoday?fsym=ETH&tsym=USD&limit=2&aggregate=3&e=CCCAGG", function(error, d) {
 
 	var data = d.Data;
   data.forEach(function(d){ d.time = new Date(d.time * 1000) });
