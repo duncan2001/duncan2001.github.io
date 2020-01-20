@@ -9,10 +9,31 @@
 
 <meta name="description" content="Explore the global urban transformation with an interactive map of city populations from 1950-2035. Identify the world's fastest growing cities and regions, and urbanisation cycles of growth and decline. Data is from the UN World Urbanization Prospects 2018." />
 
+<meta property="og:url"                content="http://luminocity3d.org/WorldCity/" />
+<meta property="og:title"              content="World City Populations Interactive Map 1950-2035" />
+<meta property="og:description"        content="An interactive map of city populations across the globe, exploring the changes between 1950 and 2035. Identify the world's fastest growing cities and regions, and urbanisation cycles of growth and decline." />
+<meta property="og:image"              content="https://www.luminocity3d.org/WorldCity/WorldCityPreview.png" />
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@citygeographics">
+<meta name="twitter:title" content="Mapping the Global Urban Transformation 1950-2035">
+<meta name="twitter:description" content="Explore an interactive map of the dramatic changes in city populations across the globe between 1950 and 2035. Identify the world's fastest growing cities and regions, and urbanisation cycles of growth and decline.">
+<meta name="twitter:image" content="https://www.luminocity3d.org/WorldCity/WorldCityPreview.png">
 
 
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+  ga('create', 'UA-54851220-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+
+    <link rel="stylesheet" href="https://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
     <style>
       html, body, #map {
         height: 100%;
@@ -228,7 +249,7 @@ h1 {
 }
 
 #legend {
-
+    width: 260px;
 }
 
 #legend ul {
@@ -531,6 +552,14 @@ h1 {
   </head>
   <body>
 
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 
     <div id="map">
@@ -563,6 +592,19 @@ h1 {
 </div>
 
 
+<div id="shareButtons">
+	<table>
+	<tr>
+	<td class="button">
+    <div class="fb-like" data-href="https://luminocity3d.org/WorldCity/" data-layout="button_count" data-action="like"  data-colorscheme="light" data-show-faces="false" data-share="true"></div>
+    </td>
+	<td class="button">
+	<a href="https://twitter.com/share" data-text="Mapping the global urban transformation, 1950-2030" data-counturl="luminocity3d.org/WorldCity" class="twitter-share-button" data-via="citygeographics" data-dnt="true">Tweet</a>
+<script type="text/javascript">
+window.twttr=(function(d,s,id){var t,js,fjs=d.getElementsByTagName(s)[0];if(d.getElementById(id)){return}js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);return window.twttr||(t={_e:[],ready:function(f){t._e.push(f)}})}(document,"script","twitter-wjs"));
+</script></td>
+</tr></table>
+</div>
 
 
 <div id="guidepanel">
@@ -647,9 +689,10 @@ h1 {
 
 
     <!-- include cartodb.js library -->
-    <script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
-	<script charset="utf-8" src="http://d3js.org/d3.v3.min.js"></script>
-	<script charset="utf-8" src="http://dimplejs.org/dist/dimple.v2.1.2.min.js"></script>
+    <script src="https://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+	<script charset="utf-8" src="https://d3js.org/d3.v3.min.js"></script>
+<script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/dimple/2.1.2/dimple.latest.min.js"></script>
+	<script charset="utf-8" src="/WorldCity/leaflet-hash.js"></script>
 
 
 
@@ -702,7 +745,7 @@ function mapFocusOn(lat,long,zoom) {
 	map.setView([lat,long],zoom);
 };
 
-//var hash = new L.Hash(map);
+var hash = new L.Hash(map);
 
 
 var ShanghaiLinkButton = document.getElementById('ShanghaiLink');
