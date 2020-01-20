@@ -43,7 +43,7 @@
 
 var query = 'PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> SELECT ?areaname ?periodlabel ?value WHERE { ?obs <http://purl.org/linked-data/cube#dataSet> <http://opendatacommunities.org/data/homelessness/rough-sleeping/count> .?obs <http://opendatacommunities.org/def/ontology/geography/refArea> ?areauri . ?obs <http://opendatacommunities.org/def/ontology/time/refPeriod> ?perioduri . ?obs <http://opendatacommunities.org/def/ontology/homelessness/roughSleepingObs> ?value . ?areauri rdfs:label ?areaname . ?perioduri rdfs:label ?periodlabel . FILTER (?periodlabel == “2016” && regex(?areaname,”^P”)) } ORDER BY ?areaname';
 
-var url = 'http://opendatacommunities.org/sparql.json';
+var url = 'https://opendatacommunities.org/sparql.json';
 
 
 $.ajax({
